@@ -1,0 +1,29 @@
+<div class="row d-flex justify-content-center align-items-center">
+
+    <div class="col-md-8 offset-xl-1">
+        <form [formGroup]="user" (ngSubmit)="login()">
+            <!-- <div class="col-md-4 "></div> -->
+            <div class="form-outline mb-4 col-md-4">
+                <label class="form-label fw-bold" for="username">User Name</label>
+                <input type="text" formControlName="username" placeholder="Enter user name"
+                class="form-control fomr-control-lg" >
+                <span class="text-danger" [hidden]="user.controls['username'].valid || user.controls['username'].pristine">Enter User name with min legnth 3 </span>
+               
+            </div>
+            <div class="form-outline mb-4 col-md-4">
+                <label class="form-label fw-bold" for="password">Password</label>
+                <input type="password" formControlName="password" placeholder="Enter user password"
+                class="form-control fomr-control-lg" >
+                <span class="text-danger" [hidden]="user.controls['password'].valid || user.controls['password'].pristine">Enter Password with min 8 characters</span>
+            </div>
+            <div class="form-outline mb-4 col-md-4">
+               
+                <input type="submit" value="Login" 
+                class="form-control fomr-control-lg btn btn-primary" [disabled]="user.invalid" >
+                <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a routerLink="register"
+                    class="link-danger">Register</a></p>
+            </div>
+        </form>
+
+    </div>
+</div>

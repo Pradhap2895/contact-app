@@ -1,0 +1,14 @@
+server:
+  port: 8787
+spring:
+  application:
+    name: contact
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/online_shopping
+    username: root
+    password: root

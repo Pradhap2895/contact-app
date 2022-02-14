@@ -1,0 +1,40 @@
+<div class="row d-flex justify-content-center align-items-center">
+
+    <div class="col-md-8 offset-xl-1">
+        <form [formGroup]="registerForm" (ngSubmit)="submitUser()">
+            <!-- <div class="col-md-4 "></div> -->
+            <div class="form-outline mb-4 col-md-4">
+                <label class="form-label fw-bold" for="username">User Name</label>
+                <input type="text" formControlName="username" placeholder="Enter user name"
+                class="form-control fomr-control-lg" >
+                <span class="text-danger" [hidden]="registerForm.controls['username'].valid || registerForm.controls['username'].pristine">Enter User name with min legnth 3 </span>
+               
+            </div>
+            <div class="form-outline mb-4 col-md-4">
+                <label class="form-label fw-bold" for="password">Password</label>
+                <input type="password" formControlName="password" placeholder="Enter user password"
+                class="form-control fomr-control-lg" >
+                <span class="text-danger" [hidden]="registerForm.controls['password'].valid || registerForm.controls['password'].pristine">Enter Password with min 8 characters</span>
+            </div>
+            <div class="form-outline mb-4 col-md-4">
+                <label class="form-label fw-bold" for="Phone">Phone</label>
+                <input type="text" formControlName="phone" placeholder="Enter user phone number"
+                class="form-control fomr-control-lg" >
+                <span class="text-danger" [hidden]="registerForm.controls['phone'].valid || registerForm.controls['phone'].pristine">Enter valid phone number</span>
+            </div>
+            <div class="form-outline mb-4 col-md-4">
+                <label class="form-label fw-bold" for="dob">DOB</label>
+                <input type="date" formControlName="dob" placeholder="Select Date of Birth"
+                class="form-control fomr-control-lg" >
+                <span class="text-danger" [hidden]="registerForm.controls['dob'].valid || registerForm.controls['dob'].pristine">Select Date of Birth</span>
+            </div>
+            <div class="form-outline mb-4 col-md-4">
+               
+                <input type="submit" value="Register" 
+                class="form-control fomr-control-lg btn btn-info" [disabled]="registerForm.invalid" >
+               
+            </div>
+        </form>
+
+    </div>
+</div>
