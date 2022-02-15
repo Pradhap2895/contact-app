@@ -1,7 +1,7 @@
 <div class="row d-flex justify-content-center align-items-center">
 
     <div class="col-md-8 offset-xl-1">
-        <form [formGroup]="user" (ngSubmit)="login()">
+        <form [formGroup]="user" (ngSubmit)="login()" *ngIf="errorMessage === undefined">
             <!-- <div class="col-md-4 "></div> -->
             <div class="form-outline mb-4 col-md-4">
                 <label class="form-label fw-bold" for="username">User Name</label>
@@ -20,10 +20,11 @@
                
                 <input type="submit" value="Login" 
                 class="form-control fomr-control-lg btn btn-primary" [disabled]="user.invalid" >
-                <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a routerLink="register"
+                <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a routerLink="/register"
                     class="link-danger">Register</a></p>
             </div>
         </form>
-
+       <div *ngIf="errorMessage !== undefined" class="alert alert-danger">{{errorMessage}}</div>
+        <div *ngIf="id !== undefined" class="alert alert-success">success fully registered. kinldy use this id to login {{id}}</div>
     </div>
 </div>

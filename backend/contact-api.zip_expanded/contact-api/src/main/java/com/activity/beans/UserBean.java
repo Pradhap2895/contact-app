@@ -16,9 +16,16 @@ public class UserBean {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer userId;
 	private String userName;
+	private String password;
 	private Long phone;
 	private Date dob;
 
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	public Integer getUserId() {
 		return userId;
 	}

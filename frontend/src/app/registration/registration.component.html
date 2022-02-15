@@ -3,11 +3,12 @@
     <div class="col-md-8 offset-xl-1">
         <form [formGroup]="registerForm" (ngSubmit)="submitUser()">
             <!-- <div class="col-md-4 "></div> -->
+            <!-- <input type="hidden" formControlName="userId"> -->
             <div class="form-outline mb-4 col-md-4">
                 <label class="form-label fw-bold" for="username">User Name</label>
-                <input type="text" formControlName="username" placeholder="Enter user name"
+                <input type="text" formControlName="userName" placeholder="Enter user name"
                 class="form-control fomr-control-lg" >
-                <span class="text-danger" [hidden]="registerForm.controls['username'].valid || registerForm.controls['username'].pristine">Enter User name with min legnth 3 </span>
+                <span class="text-danger" [hidden]="registerForm.controls['userName'].valid || registerForm.controls['userName'].pristine">Enter User name with min legnth 3 </span>
                
             </div>
             <div class="form-outline mb-4 col-md-4">
